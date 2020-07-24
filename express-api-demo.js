@@ -65,16 +65,7 @@ app.put('/api/genres/:id', (req, res) => {
 
 
 //DELETE
-app.delete('/api/genres/:id', (req, res) => {
-    let genre = genres.find(g => g.id === parseInt(req.params.id)); //get genre
-    if(!genre) return res.status(404).send("genre not found"); //if not exist, return message to client
 
-
-    const index = genres.indexOf(genre); 
-    genres.splice(index, 1); 
-
-    res.send(genre); 
-});
 
 //Client req. validation 
 function validateGenre (genre) {
